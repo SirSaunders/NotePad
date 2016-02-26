@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.notepad.MainActivity"
-    >
+    android:background="#edeaea">
 
 
     <Button
@@ -38,5 +38,7 @@
         android:layout_below="@+id/delete_button"
         android:layout_alignParentLeft="true"
         android:gravity="top|left"
-        android:background="#f3f3f3" />
+        android:background="#d5d0d0"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>
