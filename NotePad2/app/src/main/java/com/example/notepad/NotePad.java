@@ -1,13 +1,39 @@
 package com.example.notepad;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-public class NotePad extends AppCompatActivity {
+/**
+ * Created by John on 2/26/2016.
+ * This will hold all of the notes and allow access to the notes.
+ */
+public class NotePad implements Serializable{
+    private List<Note> notes;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_note_pad);
+    public NotePad(){
+        notes = new ArrayList<>();
+    }
+
+    public Note getNote(int ndx){
+        return notes.get(ndx);
+    }
+
+    public void addNote(Note note){
+        notes.add(note);
+    }
+
+    public List<Note> getNotes(){
+        return notes;
+    }
+
+    public String toString(){
+        String notepad = "";
+        int i =0;
+        for (Note n: notes) {
+            i++;
+            notepad+="Note " + i +": " +n.toString() +"\n";
+        }
+        return notepad;
     }
 }
